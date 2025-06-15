@@ -167,7 +167,7 @@ const ChatInboxPage: React.FC = () => {
 
     if (!tgId) return;
     fetch(
-      `https://prop-backend-worker.elmtalabx.workers.dev/api/user-conversations?telegramId=${tgId}`
+      `https://prop-backend-worker.sharifgptxacc.workers.dev/api/user-conversations?telegramId=${tgId}`
     )
       .then((r) => r.json())
       .then((data) => {
@@ -219,7 +219,7 @@ const ChatInboxPage: React.FC = () => {
     }
     if (!tgId) return;
     fetch(
-      `https://prop-backend-worker.elmtalabx.workers.dev/api/groups?telegramId=${tgId}`
+      `https://prop-backend-worker.sharifgptxacc.workers.dev/api/groups?telegramId=${tgId}`
     )
       .then((r) => r.json())
       .then((data) => {
@@ -504,7 +504,7 @@ const ChatInboxPage: React.FC = () => {
     if (!tgId) return;
 
     setSearching(true);
-    fetch('https://prop-backend-worker.elmtalabx.workers.dev/api/groups', {
+    fetch('https://prop-backend-worker.sharifgptxacc.workers.dev/api/groups', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ telegramId: tgId, q }),
