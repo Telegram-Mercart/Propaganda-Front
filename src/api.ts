@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://prop-backend-worker.elmtalabx.workers.dev';
+export const BASE_URL = 'https://prop-backend-worker.sharifgptxacc.workers.dev';
 
 export async function startLogin(telegramId: string, phone: string): Promise<string> {
   const resp = await fetch(`${BASE_URL}/api/avatars/start`, {
