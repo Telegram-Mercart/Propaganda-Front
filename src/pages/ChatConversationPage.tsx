@@ -204,7 +204,7 @@ const ChatConversationPage: React.FC = () => {
     }
     if (!tgId) return;
     fetch(
-      `https://prop-backend-worker.elmtalabx.workers.dev/api/groups?telegramId=${tgId}`
+      `https://prop-backend-worker.sharifgptxacc.workers.dev/api/groups?telegramId=${tgId}`
     )
       .then((r) => r.json())
       .then((data) => {
@@ -497,7 +497,7 @@ const handleSend = () => {
     }
     if (!tgId) return;
 
-    fetch(`https://prop-backend-worker.elmtalabx.workers.dev/api/user-conversations?telegramId=${tgId}`)
+    fetch(`https://prop-backend-worker.sharifgptxacc.workers.dev/api/user-conversations?telegramId=${tgId}`)
       .then((r) => r.json())
       .then((data) => {
         const convs = data.conversations || [];
@@ -571,7 +571,7 @@ const handleSend = () => {
     } catch {
       /* ignore */
     }
-    fetch('https://prop-backend-worker.elmtalabx.workers.dev/api/ledger', {
+    fetch('https://prop-backend-worker.sharifgptxacc.workers.dev/api/ledger', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),

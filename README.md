@@ -56,7 +56,7 @@ not already cached it is fetched from Telegram and stored for future requests.
 Sample request using the public worker:
 
 ```http
-GET https://prop-backend-worker.elmtalabx.workers.dev/api/group-cover?groupId=123456
+GET https://prop-backend-worker.sharifgptxacc.workers.dev/api/group-cover?groupId=123456
 ```
 
 Sample successful response:
