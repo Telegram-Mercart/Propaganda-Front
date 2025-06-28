@@ -174,6 +174,7 @@ const ChatConversationPage: React.FC = () => {
               text: m.text || m.message_content || '',
               delay: 0,
               status: m.status || defaultStatus,
+              replyTo: m.replyTo ?? m.reply_to_message_id,
             };
           }),
 
@@ -238,7 +239,7 @@ const ChatConversationPage: React.FC = () => {
           const timestamp = new Date(start + cumulative * 60000).toISOString();
           const relative = idx === 0 ? 0 : m.delay * 60;
 
-          return {
+          const base = {
             message_id: m.uuid,
             sender_id: m.from,
             sender_name: m.from,
@@ -250,7 +251,14 @@ const ChatConversationPage: React.FC = () => {
             metadata: {
               language: 'en',
             },
-          };
+          } as any;
+
+          if (m.replyTo != null) {
+            const replyMsg = conv.messages.find((x) => x.id === m.replyTo);
+            if (replyMsg) base.reply_to_message_id = replyMsg.uuid;
+          }
+
+          return base;
         });
 
 
